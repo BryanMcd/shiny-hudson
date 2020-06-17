@@ -8,7 +8,7 @@ server <- function(input, output) {
       req(input$go)
       
                                   
-       bubble <- df[grepl(paste0(input$Gene, "$", collapse = "|"), df$gene), ]
+       bubble <- df[grepl(paste0(input$Gene, collapse = "$|"), df$gene), ]
     
        output$lfc <- renderPlot(ggplot(bubble) +
                             geom_point(aes(x=comparison, y=gene, 
