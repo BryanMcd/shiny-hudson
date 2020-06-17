@@ -1,3 +1,4 @@
+library(shiny)
 df <- readRDS("Shiny.RDS")
 library(ggplot2)
 
@@ -6,11 +7,9 @@ server <- function(input, output) {
   observe({
     if (input$password=="kaechlab"){
       req(input$go)
-      
-                                  
-       bubble <- df[grepl(paste0(input$Gene, collapse = "$|"), df$gene), ]
-    
-       output$lfc <- renderPlot(ggplot(bubble) +
+      bubble <- df[grepl(paste0(input$Gene, collapse="|"), df$gene), ]
+        
+        output$lfc <- renderPlot(ggplot(bubble) +
                             geom_point(aes(x=comparison, y=gene, 
                                            color=l2fc, 
                                            size=-log10(padj), 
