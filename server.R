@@ -21,7 +21,6 @@ server <- function(input, output) {
                                                   labels = c(1,10,50,">100"),
                                                   name = "-log10(padj)",
                                                   range = c(1,10)) +
-                            labs(x="") +
                             theme_bw() +
                             theme(panel.grid.major = element_blank(),
                                   axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
