@@ -1,3 +1,5 @@
+df <- readRDS("Shiny.RDS")
+
 ui <- fluidPage(
   titlePanel("Hudson 2019 DE"),
   
